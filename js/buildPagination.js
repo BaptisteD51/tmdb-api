@@ -2,11 +2,9 @@ import buildResultPage from "./buildResultPage.js"
 import TmdbApi from "./TmdbApi.js"
 import key from "../key.js"
 
-let h2 = document.querySelector("h2")
-let filmList = document.querySelector("#film-list")
-let pagesNavigation = document.querySelector("#pages-navigation") 
-
 function buildPagination(search, totalPages){
+    let pagesNavigation = document.querySelector("#pages-navigation") 
+
     pagesNavigation.innerHTML = ""
 
     let ul = document.createElement("ul")
@@ -33,7 +31,7 @@ async function paginationClickHandler(e, page, search){
     let Api = new TmdbApi(key)
     let movies = await Api.searchMovies(search, page)
 
-    buildResultPage(search, page, movies.results, h2, filmList)
+    buildResultPage(search, page, movies.results)
 
     buildPagination(search, movies.total_pages)
 }

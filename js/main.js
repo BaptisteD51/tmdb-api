@@ -8,7 +8,6 @@ let filmList = document.querySelector("#film-list")
 let h2 = document.querySelector("h2")
 let form = document.querySelector("#form")
 let ParaError = document.querySelector("#error")
-let pagesNavigation = document.querySelector("#pages-navigation") 
 
 async function displayDiscoverMovies() {
     try {
@@ -51,9 +50,9 @@ async function formSubmitHandler(e) {
         let Api = new TmdbApi(key)
         let movies = await Api.searchMovies(search)
 
-        buildResultPage(search, 1, movies.results, h2, filmList)
+        buildResultPage(search, 1, movies.results)
 
-        buildPagination(search, movies.total_pages, pagesNavigation)
+        buildPagination(search, movies.total_pages)
     } catch (error) {
         ParaError.removeAttribute("hidden")
         ParaError.textContent = error.message
