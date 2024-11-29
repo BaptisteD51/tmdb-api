@@ -1,0 +1,16 @@
+ul#film-list{
+    display:flex;
+    list-style-type: none;
+    padding:0px;
+    flex-wrap: wrap;
+}
+
+ul#film-list h3{
+    text-align: center;
+}
+
+#error{
+    background-color: red;
+    color:white;
+    padding:20px 0px;
+}
