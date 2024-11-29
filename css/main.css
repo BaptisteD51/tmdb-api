@@ -1,16 +1,39 @@
-ul#film-list{
-    display:flex;
+ul#film-list {
+    display: flex;
     list-style-type: none;
-    padding:0px;
+    padding: 0px;
     flex-wrap: wrap;
+    gap:40px;
 }
 
-ul#film-list h3{
+ul#film-list li{
+    max-width:350px;
+}
+
+ul#film-list h3 {
     text-align: center;
 }
 
-#error{
+ul#film-list p{
+    text-align: justify;
+}
+
+#error {
     background-color: red;
+    color: white;
+    padding: 20px 0px;
+}
+
+#pages-navigation ul{
+    display:flex;
+    gap:2px;
+    list-style-type: none;
+}
+
+#pages-navigation a{
+    display: inline-block;
+    padding:10px;
+    background-color: navy;
     color:white;
-    padding:20px 0px;
+    font-weight: bold;
 }

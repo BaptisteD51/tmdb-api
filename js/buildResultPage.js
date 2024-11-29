@@ -11,9 +11,10 @@ function buildResultPage(search, page, results) {
             return `
             <li>
                 <figure>
-                    <img src=${imgBase}${movie.poster_path} />
+                    <img src=${imgBase}${movie.poster_path} alt="${movie.title}"/>
                 </figure>
                 <h3>${movie.title}</h3>
+                <p>${movie.overview}</p>
             </li>
         `
         })

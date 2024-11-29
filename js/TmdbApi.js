@@ -26,8 +26,8 @@ class TmdbApi {
     async discoverMovies() {
         let res = await fetch("https://api.themoviedb.org/3/discover/movie", this.options)
         let movies = await res.json()
-        
-        if (movies.success == false){
+
+        if (movies.success == false) {
             throw new Error(movies.status_message)
         }
 
@@ -38,7 +38,7 @@ class TmdbApi {
         let res = await fetch(`https://api.themoviedb.org/3/search/movie?query=${search}&page=${page}`, this.options)
         let movies = await res.json()
 
-        if (movies.success == false){
+        if (movies.success == false) {
             throw new Error(movies.status_message)
         }
 

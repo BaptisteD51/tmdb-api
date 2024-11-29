@@ -12,24 +12,25 @@ let ParaError = document.querySelector("#error")
 async function displayDiscoverMovies() {
     try {
         let Api = new TmdbApi(key)
-    let movies = await Api.discoverMovies()
+        let movies = await Api.discoverMovies()
 
-    let html = movies.results
-        .map(function (movie) {
-            return `
+        let html = movies.results
+            .map(function (movie) {
+                return `
             <li>
                 <figure>
-                    <img src=${imgBase}${movie.poster_path} />
+                    <img src=${imgBase}${movie.poster_path} alt="${movie.title}" />
                 </figure>
                 <h3>${movie.title}</h3>
+                <p>${movie.overview}</p>
             </li>
         `
-        })
-        .join("")
+            })
+            .join("")
 
-    filmList.innerHTML = html
+        filmList.innerHTML = html
 
-    h2.textContent = "Films à découvrir"
+        h2.textContent = "Films à découvrir"
     } catch (error) {
         ParaError.removeAttribute("hidden")
         ParaError.textContent = error.message
